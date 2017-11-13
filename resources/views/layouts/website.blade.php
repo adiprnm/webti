@@ -137,9 +137,9 @@
 			<div class="mdl-grid search">
 				<div class="mdl-cell mdl-cell--9-col mdl-cell--4-col-tablet"></div>
 				<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet">
-					<form action="/action_page.php">
+					<form method="GET" action="/search">
     				<div class="input-group carix">
-				      <input type="text" class="form-control" placeholder="Search" name="search" width="75%">
+				      <input type="text" class="form-control" placeholder="Search" name="key" width="75%">
 				      <div class="input-group-btn">
 				        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
 				      </div>
