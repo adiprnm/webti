@@ -102,4 +102,30 @@ class WebsiteController extends Controller
     public function cooperation() {
         return view('website.cooperation')->with('cooperations', Cooperation::all());
     }
+
+    public function search(Request $request) {
+        $keyword = $request->input('key');
+        $results = News::where('title', 'like', '%' . $keyword . '%')
+            ->orWhere('body', 'like', '%' . $keyword . '%')->get();
+                
+        $num_word = 50;
+        foreach ($results as $result) {
+            $result->body = str_replace("<p>", "", $result->body);
+            $result->body = str_replace("</p>", "", $result->body);
+            $words = array();
+            $words = explode(' ', $result->body, $num_word);
+            
+            if (count($words) == 50) {
+                $words[49] = " ... ";
+            }
+
+            $result->body = implode(" ", $words);
+            
+        }
+        
+        return view('website.search_result')->with([
+            'keyword' => $keyword,
+            'results' => $results
+        ]);
+    }
 }
