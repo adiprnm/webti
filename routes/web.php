@@ -23,9 +23,13 @@ Route::get('/pembelajaran/kurikulum', 'WebsiteController@curriculum');
 Route::get('/sdm/dosen/{id}', 'WebsiteController@lecturer');
 Route::get('/sdm/dosen/', 'WebsiteController@lecturer_list');
 
+Route::get('/sarana_prasarana/{slug}', 'WebsiteController@detail');
+
 Route::get('/penelitian', 'WebsiteController@research');
 Route::get('/pengabdian', 'WebsiteController@devotion');
 Route::get('/kerjasama', 'WebsiteController@cooperation');
+
+Route::get('/search', 'WebsiteController@search');
 
 Auth::routes();
 
