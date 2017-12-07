@@ -20,6 +20,7 @@ Route::get('/mahasiswa_dan_lulusan/layanan', 'WebsiteController@service');
 Route::get('/mahasiswa_dan_lulusan/{slug}', 'WebsiteController@detail');
 
 Route::get('/pembelajaran/kurikulum', 'WebsiteController@curriculum');
+Route::get('/pembelajaran/{slug}', 'WebsiteController@detail');
 Route::get('/sdm/dosen/{id}', 'WebsiteController@lecturer');
 Route::get('/sdm/dosen/', 'WebsiteController@lecturer_list');
 

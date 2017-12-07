@@ -1,4 +1,4 @@
-@extends('layouts.website')
+@extends('layouts.no_banner')
 
 @section('title')
 	@foreach($news as $n)

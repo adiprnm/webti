@@ -82,14 +82,18 @@ class NewsController extends Controller
             $user->news()->save($news);
             $news->save();
 
-            foreach ($categories as $category ) {
-                $cat = Category::find($category);
-                $news->category()->save($cat);
+            if (!empty($categories)){
+                foreach ($categories as $category ) {
+                    $cat = Category::find($category);
+                    $news->category()->save($cat);
+                }
             }
             
-            foreach ($tags as $tag ) {
-                $mytag = Tag::find($tag);
-                $news->tag()->save($mytag);
+            if (!empty($tags)){
+                foreach ($tags as $tag ) {
+                    $mytag = Tag::find($tag);
+                    $news->tag()->save($mytag);
+                }
             }
             $news->save();
             return $news;

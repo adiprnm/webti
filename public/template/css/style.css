@@ -91,9 +91,12 @@ body {
 	.show{display: none;}
 	.slider{margin-top: 50px;}
 	#lowtitle{
-		margin-top: -10px;
+		margin-top: 60px;
 	}
 	#hightitle{display: none;}
+	.mdl-card__supporting-text {
+		padding: 10px 0px;
+	}
 
 }
 @media (min-width: 1200px) {
@@ -122,7 +125,10 @@ body {
 }
 
 @media (max-width: 990px) {
-	.caption{display: none;}
+	.caption, #event {display: none;}
+	#lowtitle{
+		margin-top: 50px;
+	}
 	#foto{
 		width:173px;
 		height:157px;
@@ -134,10 +140,13 @@ body {
 	.mdl-card__media{
 	  background-color: transparent;
 	}
+	.mdl-card__supporting-text {
+		padding: 10px 0px;
+	}
 }
 
 @media (max-width: 412px){
-	.slider{display: none;}
+	.slider, #event{display: none;}
 	#lowtitle{
 		margin-top: 50px;
 	}
@@ -146,12 +155,27 @@ body {
 		height:"40%";
 	}
 	.card-square.mdl-card {
-	  width: 50%;
+	  width: 100%;
 	  height: 100%;
 	}
+
+	.mdl-card__supporting-text {
+		padding: 10px 0px;
+	}
+
 	.mdl-card__media{
 	  background-color: transparent;
 	}
+
+	.content-top {
+		padding-right: 8px;
+	}
+
+	.panel.panel-default {
+		width: 155%;
+		font-size: 9pt;
+	}
+
 }
 
 /*===========================*/
@@ -161,7 +185,9 @@ body {
 
 .card-square.mdl-card {
   width: 200px;
-  height: 500px;
+  height: 550px;
+  padding: 10px;
+  margin-left: -25px;
 }
 .card-square1.mdl-card1 {
   width: 800px;
@@ -177,6 +203,8 @@ body {
 
 .content-top{
 	margin-top: -110px;
+	padding-right: 100px;
+	margin-left: 20px;
 }
 
 .btnactivity{
@@ -212,10 +240,57 @@ body {
 
 	}
 }
+@media (max-width: 850px) {
+	#maps {
+		margin-top: 50px;
+		align-content: left;
+	}
+	.content-top {
+		padding-right: 8px;
+	}
+
+	.panel.panel-default {
+		width: 101%;
+		font-size: 9pt;
+	}
+}
+
 @media (max-width: 1200px){
 	.linecontent{display: none;}
 	.activity{display: none;}
 	.event{display: none;}
+	#maps {
+		margin-top: 0px;
+		padding-top: 0px;
+	}
+	table {
+		font-size: 9pt;
+	}
+	h3 {
+		font-size: 14pt;
+		margin-top: -14px;
+		margin-bottom: 0;
+	}
+	#event {
+		margin-top: 68px;
+	}
+
+	#event2 {
+		margin-top: 68px;
+	}
+
+	.w-50 {
+		margin-top: -100px;
+	}
+
+	.content-top {
+		padding-right: 8px;
+	}
+
+	.panel.panel-default {
+		width: 101%;
+		font-size: 9pt;
+	}
 }
 .demo-list-icon {
   width: 300px;
@@ -227,7 +302,7 @@ body {
 
 
 .footerfix{
-	margin-top: -60px;
+	margin-top: -me;
 }
 
 /*==============================*/
@@ -955,4 +1030,8 @@ div.tab button.active {
     border: 1px solid #ccc;
     border-top: none;
     width: 720px;
+}
+
+p {
+	padding: 0 10px;
 }

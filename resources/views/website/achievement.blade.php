@@ -1,4 +1,4 @@
-@extends('layouts.website')
+@extends('layouts.no_banner')
 
 @section('page_title')
 	Prestasi

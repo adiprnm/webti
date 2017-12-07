@@ -11,7 +11,7 @@
 
 @section('content')
 	@foreach($news as $n)
-	<div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--6-col-phone">
+	<div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--6-col-phone" id="card-panel">
 		<div class="card-square mdl-card">
 			<div class="mdl-card__media">
 				<img id="foto" src="{{ asset('cover_url') . '/' . $n->cover_url }}">
@@ -19,8 +19,8 @@
 			<p style="font-size: 9pt; padding-left: 0; padding-bottom: 0; margin-bottom: 0;"><strong>{{$n->published_date}}</strong></p>
 			<div class="mdl-card__supporting-text">
 				<h6 style="padding: 0; margin-top: 0;"><a href="/news_detail/{{ $n->slug }}">{{ $n->title }}</a></h6>
-				{{ $n->body }}
-				<p style="padding-left: 0;"><a href="/news_detail/{{ $n->slug }}">Baca selengkapnya</a></p>
+				{!! $n->body !!}
+				<p style="margin-top: 30px; padding: 0;"><a href="/news_detail/{{ $n->slug }}">Baca selengkapnya</a></p>
 			</div>
 		</div>
 	</div>

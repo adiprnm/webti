@@ -108,24 +108,31 @@ class WebsiteController extends Controller
         $results = News::where('title', 'like', '%' . $keyword . '%')
             ->orWhere('body', 'like', '%' . $keyword . '%')->get();
                 
-        $num_word = 50;
-        foreach ($results as $result) {
-            $result->body = str_replace("<p>", "", $result->body);
-            $result->body = str_replace("</p>", "", $result->body);
-            $words = array();
-            $words = explode(' ', $result->body, $num_word);
-            
-            if (count($words) == 50) {
-                $words[49] = " ... ";
-            }
+        if (!$results->isEmpty()){
+            $num_word = 50;
+            foreach ($results as $result) {
+                $result->body = str_replace("<p>", "", $result->body);
+                $result->body = str_replace("</p>", "", $result->body);
+                $words = array();
+                $words = explode(' ', $result->body, $num_word);
+                
+                if (count($words) == 50) {
+                    $words[49] = " ... ";
+                }
 
-            $result->body = implode(" ", $words);
-            
+                $result->body = implode(" ", $words);
+                $error = '';
+                
+            }
+        } else {
+            $error = 'Tidak ditemukan hasil dengan kata kunci <strong>' . $keyword . '</strong>';
         }
+        
         
         return view('website.search_result')->with([
             'keyword' => $keyword,
-            'results' => $results
+            'results' => $results,
+            'error' => $error
         ]);
     }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.website')
+@extends('layouts.no_banner')
 
 @section('page_title')
 	Kurikulum
@@ -12,7 +12,7 @@
 @section('content')
 	{{--  <div class="mdl-grid">  --}}
 		{{--  @foreach($lecturer as $lec)  --}}
-		<div style="margin-top:100px;" class="mdl-cell mdl-cell--12-col mdl-cell--9-col-tablet mdl-cell--12-col-phone" >
+		<div style="margin-top:100px; z-index: 2;" class="mdl-cell mdl-cell--12-col mdl-cell--9-col-tablet mdl-cell--12-col-phone" >
 			<div class="mdl-grid">
 				<div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--3-col-phone" style="margin-top: -90px">
 					<div class="card-square mdl-card" style="height: 150px">
@@ -27,8 +27,8 @@
 						  	<div class="mdl-card__supporting-text">
 							    <span><h5 style="margin-top: -10px;">{{ $lecturer->lecturer_name }}</h5></span>
 							    <span><p><i class="fa fa-envelope"></i> &nbsp;{{ $lecturer->lecturer_email }}</span><br></p>
-							    <span><p style="margin-top: -45px;"><i class="fa fa-phone"></i> &nbsp;{{ $lecturer->lecturer_phone }}</p></span>
-							    <span><p style="margin-top: -45px;"><i class="fa fa-map-marker"></i> &nbsp;{{ $lecturer->lecturer_room }} </p></span>
+							    <span><p><i class="fa fa-phone"></i> &nbsp;{{ $lecturer->lecturer_phone }}</p></span>
+							    <span><p><i class="fa fa-map-marker"></i> &nbsp;{{ $lecturer->lecturer_room }} </p></span>
 							</div>
 						</div>
 					</div>

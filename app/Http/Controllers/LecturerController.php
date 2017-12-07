@@ -57,7 +57,7 @@ class LecturerController extends Controller
             $thumbnail = $this->fit($image, 90, 120)
                 ->save(public_path('thumbnails') . '/' . $thumbnailName);
             
-            $realImage = $this->fit($image, 150, 120)
+            $realImage = $this->fit($image, 120, 150)
                 ->save(public_path('normal_picts') . '/' . $fileName);
             
             $lecturer = new Lecturer($request->except(['lecturer_photo', 'education', 'research_field']));

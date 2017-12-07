@@ -24,7 +24,7 @@
 	<header class="headerbig">
 		<div class="container">
 			<div class="mdl-grid">
-				<div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet"><a href="/"><img class="logo" src="{{ asset('template') . '/img/logo.png' }}" width="250px"></a></div>
+				<div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet" style="margin-left: -10px;"><a href="/"><img class="logo" src="{{ asset('template') . '/img/logo.png' }}" width="250px"></a></div>
 				<div class="mdl-cell mdl-cell--8-col mdl-cell--2-col-tablet"></div>
 				<div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet">
 					<div class="menu">
@@ -55,9 +55,9 @@
 			</div>
 			<div class="mdl-grid">
 				<div class="mdl-cell mdl-cell--11-col mdl-cell--8-col-tablet">
-					<div class="mdl-grid">
+					<div class="mdl-grid" style="margin-left: -20px;">
 						<ul class="nav nav-tabs menubig">
-						    <li class="active"><a href="/">Home</a></li>
+						    <li><a href="/">Home</a></li>
 						    <?php $i = 0; ?>
 
 								@foreach($abouts as $about)
@@ -127,7 +127,7 @@
 						    
 						 </ul>
 					</div>
-					<svg class="line" height="100" width="1050" text-allign=10px;>
+					<svg class="line" height="100" width="1150" style="margin-left: 2px;" text-allign=10px;>
 		            	<line x1="0" y1="0" x2="80%" y2="0" style="stroke:rgb(255,132,0);stroke-width:3" />
 		        	</svg>
 				</div>
@@ -154,38 +154,104 @@
 		  <header class="mdl-layout__header">
 		    <div class="mdl-layout__header-row">
 		      <!-- Title -->
-		      <span class="mdl-layout-title">Title</span>
+		      <span class="mdl-layout-title">TI Unpad</span>
 		      <!-- Add spacer, to align navigation to the right -->
 		      <div class="mdl-layout-spacer"></div>
 		      <!-- Navigation. We hide it in small screens. -->
-		      <nav class="mdl-navigation mdl-layout--large-screen-only">
-		        <a class="mdl-navigation__link" id="active" href="/">Home</a>
-		        <a class="mdl-navigation__link" id="link" href="">Tentang TI</a>
-		        <a class="mdl-navigation__link" id="link" href="">Mahasiswa</a>
-		        <a class="mdl-navigation__link" id="link" href="">SDM</a>
-		        <a class="mdl-navigation__link" id="link" href="">Pembelajaran</a>
-		        <a class="mdl-navigation__link" id="link" href="">Sarana</a>
-		      </nav>
+		      
 		      <!-- start search form -->
-			  <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+			  <form method="GET" action="/search">
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
 			    <label class="mdl-button mdl-js-button mdl-button--icon" for="search-expandable">
 			      <i class="material-icons">search</i>
 			    </label>
 			    <div class="mdl-textfield__expandable-holder">
-			      <input class="mdl-textfield__input" type="text" id="search-expandable" />
+			      <input class="mdl-textfield__input" type="text" id="search-expandable" name="key" />
 			      <label class="mdl-textfield__label" for="search-expandable">Search text</label>
 			    </div>
   			</div>
+				</form>
   			<!-- end search form -->
 		    </div>
 		  </header>
 		  <div class="mdl-layout__drawer">
-		    <span class="mdl-layout-title">Title</span>
+		    <span class="mdl-layout-title">TI Unpad</span>
 		    <nav class="mdl-navigation">
+					<ul style="list-style-type: none; padding:0;">
+						
+						<li class="dropdown"><a class="dropdown-toggle mdl-navigation__link" href="/">Home</a></li>
+						    <?php $i = 0; ?>
+
+								@foreach($abouts as $about)
+								<li class="dropdown">
+						      <a class="dropdown-toggle mdl-navigation__link" data-toggle="dropdown" href="#">{!! $about->category_name !!}<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+						      @foreach($about->page->all() as $page)
+						        <li><a href="/{{ $nav_temp[$i] }}/{{ $page->slug }}">{!! $page->title !!}</a></li>
+									@endforeach
+									</ul>
+						    </li>
+								<?php $i++ ?>
+								@endforeach
+
+								@foreach($student_affairs as $sa)
+								<li class="dropdown">
+						      <a class="dropdown-toggle mdl-navigation__link" data-toggle="dropdown" href="#">{!! $sa->category_name !!}<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+						      @foreach($sa->page->all() as $page)
+						        <li><a href="/{{ $nav_temp[$i] }}/{{ $page->slug }}">{!! $page->title !!}</a></li>
+									@endforeach
+						        <li><a href="/{{ $nav_temp[$i] }}/prestasi">Prestasi</a></li>
+						        <li><a href="/{{ $nav_temp[$i] }}/layanan">Layanan</a></li>
+									</ul>
+						    </li>
+								<?php $i++ ?>
+								@endforeach
+
+
+								@foreach($human_resources as $hr)
+								<li class="dropdown">
+						      <a class="dropdown-toggle mdl-navigation__link" data-toggle="dropdown" href="#">{!! $hr->category_name !!}<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+						      @foreach($hr->page->all() as $page)
+						        <li><a href="/{{ $nav_temp[$i] }}/{{ $page->slug }}">{!! $page->title !!}</a></li>
+									@endforeach
+						        <li><a href="/{{ $nav_temp[$i] }}/dosen">Dosen</a></li>
+									</ul>
+						    </li>
+								<?php $i++ ?>
+								@endforeach
+
+								@foreach($curricula as $curriculum)
+								<li class="dropdown">
+						      <a class="dropdown-toggle mdl-navigation__link" data-toggle="dropdown" href="#">{!! $curriculum->category_name !!}<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+						      @foreach($curriculum->page->all() as $page)
+						        <li><a href="/{{ $nav_temp[$i] }}/{{ $page->slug }}">{!! $page->title !!}</a></li>
+									@endforeach
+						        <li><a href="/{{ $nav_temp[$i] }}/kurikulum">Kurikulum</a></li>
+									</ul>
+						    </li>
+								<?php $i++ ?>
+								@endforeach
+
+								@foreach($facilities as $facility)
+								<li class="dropdown">
+						      <a class="dropdown-toggle mdl-navigation__link" data-toggle="dropdown" href="#">{!! $facility->category_name !!}<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+						      @foreach($facility->page->all() as $page)
+						        <li><a href="/{{ $nav_temp[$i] }}/{{ $page->slug }}">{!! $page->title !!}</a></li>
+									@endforeach
+									</ul>
+						    </li>
+								<?php $i++ ?>
+								@endforeach
+						    
+					</ul>
+		      {{--  <a class="mdl-navigation__link mdl-navigation__link" href="">Link</a>
 		      <a class="mdl-navigation__link" href="">Link</a>
 		      <a class="mdl-navigation__link" href="">Link</a>
-		      <a class="mdl-navigation__link" href="">Link</a>
-		      <a class="mdl-navigation__link" href="">Link</a>
+		      <a class="mdl-navigation__link" href="">Link</a>  --}}
 		    </nav>
 		  </div>
 		</div>
@@ -199,35 +265,19 @@
 							<div class="responsive-slider" data-spy="responsive-slider" data-autoplay="true">
 								<div class="slides" data-group="slides">
 									<ul>
+										@foreach($header_news as $key => $hn)
 										<li>
 											<div class="slide-body" data-group="slide">
-												<img src="{{ asset('template') . '/img/2a.jpg' }}" alt="">
+												<img src="{{ asset('template') . '/img/' . $key . '_copy.jpg' }}" alt="">
 												<div class="caption header" data-animate="slideAppearUpToDown" data-delay="500" data-length="300">
-													<button class="btn btn-primary"><h2> we are creative design</h2></button>
-													<div class="caption-sub" data-animate="slideAppearDownToUp" data-delay="1200" data-length="300"><button class="btn btn-primary"><h4><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit sit amet.</span></h4></button></div>
+													<button class="btn btn-primary"><h4><a href="/news_detail/{{ $hn->slug }}" style="color: white;">{{ $hn->title }}</a></h4></button>
+													<div class="caption-sub" data-animate="slideAppearDownToUp" data-delay="1200" data-length="300"><button class="btn btn-primary"><h6><span><a href="/news_detail/{{ $hn->slug }}" style="color: white;">Baca selengkapnya</a></span></h6></button></div>
 												</div>
 											</div>
 										</li>
-									<li>
-										<div class="slide-body" data-group="slide">
-											<img src="{{ asset('template') . '/img/1.jpg' }}" alt="">
-											<div class="caption header" data-animate="slideAppearDownToUp" data-delay="500" data-length="300">
-												<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off"><h2>creative design Responsive slider</h2></button>
-												<div class="caption-sub" data-animate="slideAppearUpToDown" data-delay="800" data-length="300"><button class="btn btn-primary"><h4><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit sit amet. </span></h4></button></div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="slide-body" data-group="slide">
-											<img src="{{ asset('template') . '/img/10.jpg' }}" alt="">
-											<div class="caption header" data-animate="slideAppearUpToDown" data-delay="500" data-length="300">
-											  <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off"><h2>creative design Custom animations</h2></button>
-											  <div class="caption-sub" data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><button class="btn btn-primary"><h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit sit amet.</h4></button></div>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</div>
+										@endforeach
+									</ul>
+								</div>
 								<a class="slider-control left" href="#" data-jump="prev"><i class="fa fa-angle-left fa-2x"></i></a>
 								<a class="slider-control right" href="#" data-jump="next"><i class="fa fa-angle-right fa-2x"></i></a>		
 							</div>
@@ -238,7 +288,7 @@
 			</div>
 		</div>
 		<!-- content -->
-		<div class="container">
+		<div class="container" stlyle="padding-left: 15px;">
 			
 			<div class="mdl-grid">
 				<div class="mdl-cell mdl-cell--9-col mdl-cell--9-col-tablet mdl-cell--12-col-phone" >
@@ -282,7 +332,7 @@
 			        	</div>
 					</div>
 					<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet"></div>
-					<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet">
+					<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet" id="event2">
 						<h3>Event</h3>
 						<svg class="linecontent" height="100" width="111%" text-allign=10px;>
 			            	<line x1="0" y1="0" x2="80%" y2="0" style="stroke:rgb(255,132,0);stroke-width:3" />
@@ -337,7 +387,7 @@
 				</p>
 			</div>
 			<div class="mdl-cell mdl-cell--4-col mdl-cell--3col-tablet footerfix"></div>
-			<div class="mdl-cell mdl-cell--3-col mdl-cell--3col-tablet footerfix">
+			<div class="mdl-cell mdl-cell--3-col mdl-cell--3col-tablet footerfix" id="maps">
 				<span style="color: #ff8400">Location</span>
 				<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d6030.418742494061!2d-111.34563870463673!3d26.01036670629853!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1471908546569" width="300" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
 			</div>
