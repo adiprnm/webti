@@ -357,20 +357,32 @@
 			        	</svg>
 			        	<div class="card w-50">
 						  <div class="card-block">
-						    <h5 class="card-title">2017</h5>
-						    <p class="card-text">Seminar International</p>
-						    <a href="#" class="btn btn-primary">Join</a>
+								{{--  <hr>  --}}
+								<div>&nbsp;</div>
+								@foreach($events as $event)
+						    {{--  <h5 class="card-title">2017</h5>  --}}
+								<div class="event-content">
+						    <span class="badge">{{ $event->event_date }}</span>
+									<p class="card-text"><strong>{{ $event->event_title }}</strong> di {{ $event->event_location }}</p>
+						    	<a href="#" class="btn btn-primary">Join</a>
+								</div>
+								<div>&nbsp;</div>
+								@endforeach
+						    {{--  <h5 class="card-title">2017</h5>
+						    <span class="badge">
+								<p class="card-text">Seminar International</p>
+						    <a href="#" class="btn btn-primary">Join</a>  --}}
 						  </div>
 						</div>
 					</div>
 					<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet event">
 						<h3>Himpunan</h3>
-						<svg class="linecontent" height="100" width="111%" text-allign=10px;>
-			            	<line x1="0" y1="0" x2="80%" y2="0" style="stroke:rgb(255,132,0);stroke-width:3" />
-			        	</svg>
-			        	<svg class="linecontentlow" height="100" width="127%" text-allign=10px;>
-			            	<line x1="0" y1="0" x2="80%" y2="0" style="stroke:rgb(255,132,0);stroke-width:3" />
-			        	</svg>
+							<svg class="linecontent" height="100" width="111%" text-allign=10px;>
+											<line x1="0" y1="0" x2="80%" y2="0" style="stroke:rgb(255,132,0);stroke-width:3" />
+									</svg>
+									<svg class="linecontentlow" height="100" width="127%" text-allign=10px;>
+											<line x1="0" y1="0" x2="80%" y2="0" style="stroke:rgb(255,132,0);stroke-width:3" />
+									</svg>
 				 		<a href="http://himatif.fmipa.unpad.ac.id/"><img src="{{ asset('template') . '/img/himatif.png' }}" height="100px" class="himatif"></a>
 					</div>
 				</div>

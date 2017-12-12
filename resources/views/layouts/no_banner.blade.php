@@ -323,9 +323,21 @@
 			      </svg>
 			      <div class="card w-50">
 						  <div class="card-block">
-						    <h5 class="card-title">2017</h5>
-						    <p class="card-text">Seminar International</p>
-						    <a href="#" class="btn btn-primary">Join</a>
+								{{--  <hr>  --}}
+								<div>&nbsp;</div>
+								@foreach($events as $event)
+						    {{--  <h5 class="card-title">2017</h5>  --}}
+								<div class="event-content">
+						    <span class="badge">{{ $event->event_date }}</span>
+									<p class="card-text"><strong>{{ $event->event_title }}</strong> di {{ $event->event_location }}</p>
+						    	<a href="#" class="btn btn-primary">Join</a>
+								</div>
+								<div>&nbsp;</div>
+								@endforeach
+						    {{--  <h5 class="card-title">2017</h5>
+						    <span class="badge">
+								<p class="card-text">Seminar International</p>
+						    <a href="#" class="btn btn-primary">Join</a>  --}}
 						  </div>
 						</div>
 					</div>

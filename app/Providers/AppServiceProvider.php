@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use App\PageCategory;
 use App\News;
 use App\Tag;
+use App\Event;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -69,19 +70,9 @@ class AppServiceProvider extends ServiceProvider
                 }
             }
 
-            // $events = Tag::with('news')->where('tag_name', 'Event')
-            //     ->take(4)
-            //     ->get();
-            
-            // dd($events);
-
-            $result = array();
-            foreach($events as $k => $event) {
-                $result["$k"] = count($event->tag);
-            }
-
-            dd($result);
-            
+            $events = Event::orderBy('event_date', 'desc')
+                ->take(4)
+                ->get();            
 
             $view->with([
                 'abouts'            => $abouts,
@@ -91,7 +82,8 @@ class AppServiceProvider extends ServiceProvider
                 'facilities'        => $facilities,
                 'researches'        => $researches,
                 'nav_temp'          => $nav_temp,
-                'header_news'       => $header_news
+                'header_news'       => $header_news,
+                'events'            => $events
             ]);
             
             
@@ -119,6 +111,10 @@ class AppServiceProvider extends ServiceProvider
             
             $nav_temp = array('tentang_ti', 'mahasiswa_dan_lulusan', 'sdm', 'pembelajaran', 'sarana_prasarana');
 
+            $events = Event::orderBy('event_date', 'desc')
+                ->take(4)
+                ->get();   
+
             $view->with([
                 'abouts'            => $abouts,
                 'student_affairs'   => $student_affairs,
@@ -126,7 +122,8 @@ class AppServiceProvider extends ServiceProvider
                 'curricula'         => $curricula,
                 'facilities'        => $facilities,
                 'researches'        => $researches,
-                'nav_temp'          => $nav_temp
+                'nav_temp'          => $nav_temp,
+                'events'            => $events
             ]);
             
             

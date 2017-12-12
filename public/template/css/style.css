@@ -98,6 +98,26 @@ body {
 	margin-bottom: 60px;
 }
 
+.badge {
+	margin-top: 10px;
+	border-radius: 0;
+}
+
+.card-block {
+	width: 89%;
+	padding: 5px 10px;
+	/* background-color: #f7f7f7; */
+}
+.card-block .card-text {
+	padding-left: 0;
+}
+
+.event-content {
+	border-left: 2px solid #ff8400;
+	padding-left: 10px;
+	box-shadow: 3px 3px 5px #dbdbdb;
+}
+
 /*=========================*/
 
 
@@ -253,7 +273,7 @@ body {
 @media (min-width: 1200px){
 	.linecontentlow{display: none;}
 	.event{
-		margin-top: 140px;
+		margin-top: 700px;
 
 	}
 }
@@ -297,6 +317,7 @@ body {
 
 	#event2 {
 		margin-top: 68px;
+		margin-bottom:100px;
 	}
 
 	.w-50 {
