@@ -152,11 +152,11 @@
 			</div>
 			<div class="mdl-grid search">
 				<div class="mdl-cell mdl-cell--9-col mdl-cell--4-col-tablet"></div>
-				<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet" style="padding-right:15px;">
+				<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet" style="padding-right:14px; margin-top: -30px;">
 					<form method="GET" action="/search">
     				<div class="input-group carix">
 				      <input type="text" class="form-control" placeholder="Search" name="key" width="75%">
-				      <div class="input-group-btn">
+				      <div class="input-group-btn" style="padding-top: 1px;">
 				        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
 				      </div>
 				    </div>
