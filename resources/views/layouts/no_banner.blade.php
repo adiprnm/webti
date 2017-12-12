@@ -33,9 +33,18 @@
 								<div class="btn-group download">
 									<button type="button" class="btn btn-primary dropdown-toggle btn-xs" data-toggle="dropdown">
 									Download &nbsp;<span class="caret"></span></button>
-									  <ul class="dropdown-menu" role="menu">
-									    <li><a href="#">Tablet</a></li>
-									    <li><a href="#">Smartphone</a></li>
+									  <ul class="dropdown-menu dropdown-menu-right" role="menu">
+									    <li><a href="http://www.unpad.ac.id/wp-content/uploads/2012/10/PR-N0-22-TAHUN-2016-KALENDAR-KEGIATAN-AKADEMIK.pdf">Kalender Akademik 2016-2017</a></li>
+									    <li><a href="https://drive.google.com/a/unpad.ac.id/file/d/0Bx4uEsniwF4KUWlZTGVPX3RlTUE/view?usp=sharing">RIR Unpad 2016-2020</a></li>
+									    <li><a href="https://drive.google.com/a/unpad.ac.id/file/d/0Bx4uEsniwF4KT2xzWUw1Ry1Ec3c/view?usp=sharing">Pedoman Riset Unpad 2017</a></li>
+									    <li><a href="https://drive.google.com/a/unpad.ac.id/file/d/0Bx4uEsniwF4KbjYtalc1Q0Q0alk/view?usp=sharing">Video Riset Unpad 2017</a></li>
+									    <li><a href="http://informatika.unpad.ac.id/file/ProceedingICMCS2013.pdf">Proceeding ICMCS 2013</a></li>
+									    <li><a href="http://www.fmipa.unpad.ac.id/fix/wp-content/document_academic/1-Pengelolaan-Pendidikan-Unpad.pdf">Pengelolaan Pendidikan UNPAD</a></li>
+									    <li><a href="http://www.fmipa.unpad.ac.id/fix/wp-content/document_academic/2-Penyelenggaraan-Pendidikan-FMIPA-Unpad.pdf">Penyelenggaraan Pendidikan di FMIPA UNPAD</a></li>
+									    <li><a href="http://www.fmipa.unpad.ac.id/fix/wp-content/document_academic/3-Penulisan-Skripsi-Unpad.pdf">Pedoman Penulisan Skripsi</a></li>
+									    <li><a href="http://akademik.fmipa.unpad.ac.id/direktori_peraturan/">Direktori Peraturan FMIPA UNPAD</a></li>
+									    <li><a href="http://www.unpad.ac.id/arsip-unpad/">Direktori Arsip UNPAD</a></li>
+									    <li><a href="https://drive.google.com/open?id=0B6slv9PMS6LEWlphOGNGNm9LOUE">SAPTO 101</a></li>
 									  </ul>
 								</div>
 							</li>
@@ -43,9 +52,15 @@
 								<div class="btn-group link">
 									<button type="button" class="btn btn-primary dropdown-toggle btn-xs" data-toggle="dropdown">
 									Link &nbsp;<span class="caret"></span></button>
-									  <ul class="dropdown-menu" role="menu">
-									    <li><a href="#">Tablet</a></li>
-									    <li><a href="#">Smartphone</a></li>
+									  <ul class="dropdown-menu dropdown-menu-right" role="menu">
+									    <li><a href="siat.unpad.ac.id">Sistem Informasi Akademik Terpadu (SIAT)</a></li>
+									    <li><a href="http://informatika.unpad.ac.id/dreamspark/">Microsoft Imagine Unpad</a></li>
+									    <li><a href="http://cdc.unpad.ac.id/">Lowongan Kerja dan Karir</a></li>
+									    <li><a href="http://kandaga.unpad.ac.id/">Unpad Repositories</a></li>
+									    <li><a href="http://staffs.unpad.ac.id/">Sistem Informasi Staff</a></li>
+									    <li><a href="http://blogs.unpad.ac.id/informatika">BLOGS Informatika</a></li>
+									    <li><a href="http://amadi.unpad.ac.id/">AMADI Research</a></li>
+									    <li><a href="http://pak.dikti.go.id/portal/">Sistem Penilaian Angka Kredit Dosen</a></li>
 									    </ul>
 								</div>
 							</li>					

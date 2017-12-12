@@ -81,6 +81,13 @@ body {
 	color: #ff8400 !important;
 }
 
+.mdl-card__supporting-text h6 a, .mdl-card__supporting-text p a {
+	color: #ff8400;
+}
+
+.widgetheading {
+	color: black;
+}
 
 /*=========================*/
 
@@ -324,8 +331,8 @@ body {
 	margin-top:-30px;
 }
 .himatif{
-	margin-left: 70px;
-	margin-top: -80px;
+	margin-left: 60px;
+	margin-top: -60px;
 }
 
 .fotox{
