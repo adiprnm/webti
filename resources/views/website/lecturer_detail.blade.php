@@ -1,7 +1,7 @@
 @extends('layouts.no_banner')
 
 @section('page_title')
-	Kurikulum
+	Detail Dosen
 @endsection
 
 @section('title')

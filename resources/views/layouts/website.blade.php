@@ -24,7 +24,7 @@
 	<header class="headerbig">
 		<div class="container">
 			<div class="mdl-grid">
-				<div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet" style="margin-left: -10px;"><a href="/"><img class="logo" src="{{ asset('template') . '/img/logo.png' }}" width="250px"></a></div>
+				<div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet" style="margin-left: -27px;"><a href="/"><img class="logo" src="{{ asset('template') . '/img/logo.png' }}" width="250px"></a></div>
 				<div class="mdl-cell mdl-cell--8-col mdl-cell--2-col-tablet"></div>
 				<div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet">
 					<div class="menu">
@@ -142,7 +142,7 @@
 						    
 						 </ul>
 					</div>
-					<svg class="line" height="100" width="1150" style="margin-left: 2px;" text-allign=10px;>
+					<svg class="line" height="100" width="1375" style="margin-left: 2px;" text-allign=10px;>
 		            	<line x1="0" y1="0" x2="80%" y2="0" style="stroke:rgb(255,132,0);stroke-width:3" />
 		        	</svg>
 				</div>
@@ -341,9 +341,9 @@
 			            	<line x1="0" y1="0" x2="80%" y2="0" style="stroke:rgb(255,132,0);stroke-width:3" />
 			        	</svg>
 			        	<div class="btn-group-vertical btnactivity">
-				        	<button class="btn btn-info btn-sm" id="pad"><a href="/penelitian" style="color: white;">Penelitian</a></button>
-				        	<button class="btn btn-info btn-sm" id="pad"><a href="/pengabdian" style="color: white;">Pengabdian</a></button>
-				        	<button class="btn btn-info btn-sm" id="pad"><a href="/kerjasama" style="color: white;">Kerja Sama</a></button>
+				        	<button class="btn btn-info btn-sm" id="pad" onclick="window.location.href='/penelitian'"><a style="color: white;">Penelitian</a></button>
+				        	<button class="btn btn-info btn-sm" id="pad" onclick="window.location.href='/pengabdian'"><a style="color: white;">Pengabdian</a></button>
+				        	<button class="btn btn-info btn-sm" id="pad" onclick="window.location.href='/kerjasama'"><a style="color: white;">Kerja Sama</a></button>
 			        	</div>
 					</div>
 					<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet"></div>
@@ -379,31 +379,29 @@
 	</main>
 	<footer>
 		<div class="container">
-		<div class="mdl-grid">
+		<div class="mdl-grid" style="margin: 0">
 			<div class="mdl-cell mdl-cell--12-col mdl-cell--3col-tablet">
-				<svg class="linecontentfooter" height="100" width="125%" text-allign=10px;>
+				<svg class="linecontentfooter" height="10" width="125%" text-allign=10px; style>
 		            	<line x1="0" y1="0" x2="80%" y2="0" style="stroke:rgb(255,132,0);stroke-width:3" />
 		        	</svg>
 			</div>
-			<div class="mdl-cell mdl-cell--2-col mdl-cell--3col-tablet footerfix">
+		</div>
+		<div class="mdl-grid" style="margin-top: -10px;">
+			<div class="mdl-cell mdl-cell--6-col mdl-cell--3col-tablet footerfix">
 				<h5 class="widgetheading">Contact Me</h5>
 				<p>
 					<span class="glyphicon glyphicon-earphone"></span>&nbsp;+6222-7798983
 					<br>
 					<span class="glyphicon glyphicon-phone-alt"></span>&nbsp;+6222-7794545
-				</p>
-			</div>
-			<div class="mdl-cell mdl-cell--3-col mdl-cell--3col-tablet footerfix">
-				<h5 class="widgetheading">&nbsp;</h5>
-				<p>
+					<br>
 					<span class="glyphicon glyphicon-envelope"></span>&nbsp;+62811234734
 					<br>
 					<span class="glyphicon glyphicon-home"></span>&nbsp;Informatika@unpad.ac.id
 				</p>
 			</div>
-			<div class="mdl-cell mdl-cell--4-col mdl-cell--3col-tablet footerfix"></div>
-			<div class="mdl-cell mdl-cell--3-col mdl-cell--3col-tablet footerfix" id="maps">
-				<span style="color: #ff8400">Location</span>
+			
+			<div class="mdl-cell mdl-cell--6-col mdl-cell--3col-tablet footerfix">
+				<h5 class="widgetheading">Location</h5>
 				<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d6030.418742494061!2d-111.34563870463673!3d26.01036670629853!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1471908546569" width="300" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
 			</div>
 			</div>

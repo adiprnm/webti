@@ -21,13 +21,13 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
 </head>
 <body>
-	<header class="headerbig">
+	<header class="headerbig" style="margin-left: -60px;">
 		<div class="container">
 			<div class="mdl-grid">
 				<div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet"><a href="/"><img class="logo" src="{{ asset('template') . '/img/logo.png' }}" width="250px"></a></div>
 				<div class="mdl-cell mdl-cell--8-col mdl-cell--2-col-tablet"></div>
 				<div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet">
-					<div class="menu">
+					<div class="menu" style="padding-right: 32px;">
 						<ul class="nav nav-tabs" role="tablist">
 							<li>
 								<div class="btn-group download">
@@ -72,7 +72,7 @@
 				<div class="mdl-cell mdl-cell--11-col mdl-cell--8-col-tablet">
 					<div class="mdl-grid">
 						<ul class="nav nav-tabs menubig">
-							<li class="active"><a href="/">Home</a></li>
+							<li><a href="/">Home</a></li>
 							<?php $i = 0; ?>
 
 							@foreach($abouts as $about)
@@ -142,7 +142,7 @@
 							
 						</ul>
 					</div>
-					<svg class="line" height="100" width="1050" text-allign=10px;>
+					<svg class="line" height="100" width="1350" text-allign=10px;>
 						<line x1="0" y1="0" x2="80%" y2="0" style="stroke:rgb(255,132,0);stroke-width:3" />
 					</svg>
 				</div>
@@ -151,7 +151,7 @@
 			</div>
 			<div class="mdl-grid search">
 				<div class="mdl-cell mdl-cell--9-col mdl-cell--4-col-tablet"></div>
-				<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet">
+				<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet" style="padding-right:15px;">
 					<form method="GET" action="/search">
     				<div class="input-group carix">
 				      <input type="text" class="form-control" placeholder="Search" name="key" width="75%">
@@ -345,33 +345,31 @@
 	</main>
 	<footer>
 		<div class="container">
-			<div class="mdl-grid">
-				<div class="mdl-cell mdl-cell--12-col mdl-cell--3col-tablet">
-					<svg class="linecontentfooter" height="100" width="125%" text-allign=10px;>
-						<line x1="0" y1="0" x2="80%" y2="0" style="stroke:rgb(255,132,0);stroke-width:3" />
-					</svg>
-				</div>
-				<div class="mdl-cell mdl-cell--2-col mdl-cell--3col-tablet footerfix">
-					<h5 class="widgetheading">Contact Me</h5>
-					<p>
-						<span class="glyphicon glyphicon-earphone"></span>&nbsp;+6222-7798983
-						<br>
-						<span class="glyphicon glyphicon-phone-alt"></span>&nbsp;+6222-7794545
-					</p>
-				</div>
-				<div class="mdl-cell mdl-cell--3-col mdl-cell--3col-tablet footerfix">
-					<h5 class="widgetheading">&nbsp;</h5>
-					<p>
-						<span class="glyphicon glyphicon-envelope"></span>&nbsp;+62811234734
-						<br>
-						<span class="glyphicon glyphicon-home"></span>&nbsp;Informatika@unpad.ac.id
-					</p>
-				</div>
-				<div class="mdl-cell mdl-cell--4-col mdl-cell--3col-tablet footerfix"></div>
-				<div class="mdl-cell mdl-cell--3-col mdl-cell--3col-tablet footerfix" id="maps">
-					<span style="color: #ff8400">Location</span>
-					<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d6030.418742494061!2d-111.34563870463673!3d26.01036670629853!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1471908546569" width="300" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
-				</div>
+		<div class="mdl-grid" style="margin: 0">
+			<div class="mdl-cell mdl-cell--12-col mdl-cell--3col-tablet">
+				<svg class="linecontentfooter" height="10" width="125%" text-allign=10px; style>
+		            	<line x1="0" y1="0" x2="80%" y2="0" style="stroke:rgb(255,132,0);stroke-width:3" />
+		        	</svg>
+			</div>
+		</div>
+		<div class="mdl-grid" style="margin-top: -10px;">
+			<div class="mdl-cell mdl-cell--6-col mdl-cell--3col-tablet footerfix">
+				<h5 class="widgetheading">Contact Me</h5>
+				<p>
+					<span class="glyphicon glyphicon-earphone"></span>&nbsp;+6222-7798983
+					<br>
+					<span class="glyphicon glyphicon-phone-alt"></span>&nbsp;+6222-7794545
+					<br>
+					<span class="glyphicon glyphicon-envelope"></span>&nbsp;+62811234734
+					<br>
+					<span class="glyphicon glyphicon-home"></span>&nbsp;Informatika@unpad.ac.id
+				</p>
+			</div>
+			
+			<div class="mdl-cell mdl-cell--6-col mdl-cell--3col-tablet footerfix">
+				<h5 class="widgetheading">Location</h5>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d6030.418742494061!2d-111.34563870463673!3d26.01036670629853!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1471908546569" width="300" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
 			</div>
 		</div>
 	</footer>
