@@ -148,6 +148,7 @@
 				</div>
 			</div>
 			<div class="mdl-cell mdl-cell--1-col mdl-cell--4-col-tablet">
+			&nbsp;
 			</div>
 			<div class="mdl-grid search">
 				<div class="mdl-cell mdl-cell--9-col mdl-cell--4-col-tablet"></div>
@@ -307,9 +308,9 @@
 			       	<line x1="0" y1="0" x2="80%" y2="0" style="stroke:rgb(255,132,0);stroke-width:3" />
 			      </svg>
 			      <div class="btn-group-vertical btnactivity">
-				    	<button class="btn btn-info btn-sm" id="pad"><a href="/penelitian" style="color: white;">Penelitian</a></button>
-				      <button class="btn btn-info btn-sm" id="pad"><a href="/pengabdian" style="color: white;">Pengabdian</a></button>
-				      <button class="btn btn-info btn-sm" id="pad"><a href="/kerjasama" style="color: white;">Kerja Sama</a></button>
+				      <button class="btn btn-info btn-sm" id="pad" onclick="window.location.href='/penelitian'"><a style="color: white;">Penelitian</a></button>
+				      <button class="btn btn-info btn-sm" id="pad" onclick="window.location.href='/pengabdian'"><a style="color: white;">Pengabdian</a></button>
+				      <button class="btn btn-info btn-sm" id="pad" onclick="window.location.href='/kerjasama'"><a style="color: white;">Kerja Sama</a></button>
 			      </div>
 					</div>
 					<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet"></div>
@@ -330,7 +331,7 @@
 								<div class="event-content">
 						    <span class="badge">{{ $event->event_date }}</span>
 									<p class="card-text"><strong>{{ $event->event_title }}</strong> di {{ $event->event_location }}</p>
-						    	<a href="#" class="btn btn-primary">Join</a>
+						    	<a style="z-index: 1000;" href="{{ '/event_ti/' . $event->event_slug }}" class="btn btn-primary">Join</a>
 								</div>
 								<div>&nbsp;</div>
 								@endforeach

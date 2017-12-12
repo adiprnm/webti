@@ -364,7 +364,7 @@
 								<div class="event-content">
 						    <span class="badge">{{ $event->event_date }}</span>
 									<p class="card-text"><strong>{{ $event->event_title }}</strong> di {{ $event->event_location }}</p>
-						    	<a href="#" class="btn btn-primary">Join</a>
+						    	<a href="{{ '/event_ti/' . $event->event_slug }}" class="btn btn-primary">Join</a>
 								</div>
 								<div>&nbsp;</div>
 								@endforeach

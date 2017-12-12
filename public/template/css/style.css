@@ -118,6 +118,10 @@ body {
 	box-shadow: 3px 3px 5px #dbdbdb;
 }
 
+.mdl-layout__container {
+	z-index: -100;
+}
+
 /*=========================*/
 
 

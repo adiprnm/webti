@@ -31,6 +31,7 @@ Route::get('/pengabdian', 'WebsiteController@devotion');
 Route::get('/kerjasama', 'WebsiteController@cooperation');
 
 Route::get('/search', 'WebsiteController@search');
+Route::get('/event_ti/{slug}', 'WebsiteController@event');
 
 Auth::routes();
 

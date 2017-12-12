@@ -14,6 +14,7 @@ use App\Service;
 use App\Research;
 use App\Devotion;
 use App\Cooperation;
+use App\Event;
 use DB;
 
 class WebsiteController extends Controller
@@ -134,5 +135,10 @@ class WebsiteController extends Controller
             'results' => $results,
             'error' => $error
         ]);
+    }
+
+    public function event($slug) {
+        $event = Event::where('event_slug', $slug)->get();
+        return view('website.event')->with('event', $event);
     }
 }
