@@ -72,4 +72,8 @@ class User extends Authenticatable
     public function lecturer_summary() {
         return $this->hasMany('App\LecturerSummary');
     }
+
+    public function event() {
+        return $this->hasMany('App\Event');
+    }
 }

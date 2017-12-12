@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\PageCategory;
 use App\News;
+use App\Tag;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -67,6 +68,20 @@ class AppServiceProvider extends ServiceProvider
                     $hn->title = implode(" ", $words);
                 }
             }
+
+            // $events = Tag::with('news')->where('tag_name', 'Event')
+            //     ->take(4)
+            //     ->get();
+            
+            // dd($events);
+
+            $result = array();
+            foreach($events as $k => $event) {
+                $result["$k"] = count($event->tag);
+            }
+
+            dd($result);
+            
 
             $view->with([
                 'abouts'            => $abouts,

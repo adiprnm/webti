@@ -20,7 +20,7 @@ class WebsiteController extends Controller
 {
     public function home() {
         $num_word = 12;
-        $news = News::where('news_status', 1)->get();
+        $news = News::where('news_status', 1)->orderBy('published_date', 'desc')->get();
 
         foreach ($news as $n) {
             $n->body = str_replace("<p>", "", $n->body);

@@ -47,6 +47,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('achievement', 'AchievementController');
     Route::resource('service', 'ServiceController');
     Route::resource('lecturer', 'LecturerController');
+    Route::resource('event', 'EventController');
 
     Route::get('/logout', function() {
         Auth::logout();

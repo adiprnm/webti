@@ -27,7 +27,7 @@
 				<div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet" style="margin-left: -27px;"><a href="/"><img class="logo" src="{{ asset('template') . '/img/logo.png' }}" width="250px"></a></div>
 				<div class="mdl-cell mdl-cell--8-col mdl-cell--2-col-tablet"></div>
 				<div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet">
-					<div class="menu">
+					<div class="menu" style="margin-right: -50px;">
 						<ul class="nav nav-tabs" role="tablist">
 							<li>
 								<div class="btn-group download">

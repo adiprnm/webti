@@ -102,6 +102,17 @@
                                 </li>
                             </ul>
                         </li>
+                        <li>
+                            <a href="#"><i class="fa fa-gamepad fa-fw"></i> Event<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href=" {{ route('event.index') }} ">Lihat Semua</a>
+                                </li>
+                                <li>
+                                    <a href=" {{ route('event.create') }} ">Buat Event Baru</a>
+                                </li>
+                            </ul>
+                        </li>
                         @foreach($abouts as $abouts)
                         <li>
                             <a href="#"><i class="fa fa-info-circle  fa-fw"></i> {{ $abouts->category_name }}<span class="fa arrow"></span></a>
