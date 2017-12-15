@@ -11,7 +11,7 @@
 
 @section('content')
 	@foreach($news as $n)
-	<div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--6-col-phone" id="card-panel">
+	<div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--6-col-phone" id="card-panel">
 		<div class="card-square mdl-card">
 			<div class="mdl-card__media">
 				<img id="foto" src="{{ asset('cover_url') . '/' . $n->cover_url }}">
