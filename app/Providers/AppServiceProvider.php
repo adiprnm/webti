@@ -58,7 +58,7 @@ class AppServiceProvider extends ServiceProvider
             
             $nav_temp = array('tentang_ti', 'mahasiswa_dan_lulusan', 'sdm', 'pembelajaran', 'sarana_prasarana');
             
-            $header_news = News::take(3)->get();
+            $header_news = News::orderBy('published_date', 'desc')->take(3)->get();
             if (!$header_news->isEmpty()) {
                 foreach ($header_news as $hn) {
                     $words = array();
