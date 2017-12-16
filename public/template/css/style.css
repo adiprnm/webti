@@ -143,6 +143,7 @@ body {
 	.slider{margin-top: -50px;}
 	.headermiddle{display: none;}
 	#lowtitle{display: none;}
+	.on{display: none;}
 	#foto{
 		width:250px;
 		height:157px;
@@ -281,7 +282,7 @@ body {
 @media (min-width: 1200px){
 	.linecontentlow{display: none;}
 	.event{
-		margin-top: 700px;
+		margin-top: 630px;
 
 	}
 }
