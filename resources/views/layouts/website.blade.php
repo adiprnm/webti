@@ -32,14 +32,14 @@
 			<header class="headerbig">
 				<div class="container">
 					<div class="mdl-grid">
-						<div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet" style="margin-left: -27px;">
+						<div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet">
 							<a href="/">
-								<img class="logo" src="{{ asset('template') . '/img/logo.png' }}" width="250px">
+								<img style="margin-left: -30px;" class="logo" src="{{ asset('template') . '/img/logo.png' }}" width="250px">
 							</a>
 						</div>
-						<div class="mdl-cell mdl-cell--8-col mdl-cell--2-col-tablet"></div>
-						<div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet">
-							<div class="menu" style="margin-right: -40px;">
+						<div class="mdl-cell mdl-cell--7-col mdl-cell--2-col-tablet"></div>
+						<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet">
+							<div class="mdl-grid" style="padding-left: 120px;">
 								<ul class="nav nav-tabs" role="tablist">
 									<li>
 										<div class="btn-group download" style="margin-top: -40px">
@@ -138,10 +138,20 @@
 									</li>
 								</ul>
 							</div>
+							<div class="mdl-grid" style="padding-top: 20px;">
+								<form method="GET" action="/search" >
+									<div class="input-group carix">
+										<input type="text" class="form-control" placeholder="Search" name="key" id="searchbig">
+										<div class="input-group-btn">
+											<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+										</div>
+									</div>
+								</form>
+							</div>
 						</div>
 					</div>
-					<div class="mdl-grid">
-						<div class="mdl-cell mdl-cell--11-col mdl-cell--8-col-tablet">
+					<div class="mdl-grid" style="margin-top: -20px;">
+						<div class="mdl-cell mdl-cell--10-col mdl-cell--8-col-tablet">
 							<div class="mdl-grid" style="margin-left: -20px;">
 								<ul class="nav nav-tabs menubig">
 									<li><a href="/">Home</a></li>
@@ -209,25 +219,10 @@
 							</div>
 							<svg class="line" height="100" width="1375" style="margin-left: 2px;" text-allign=10px;>
 								<line x1="0" y1="0" x2="80%" y2="0" style="stroke:rgb(255,132,0);stroke-width:3" />
-								</svg>
-							</div>
-							<div class="mdl-cell mdl-cell--1-col mdl-cell--4-col-tablet">
-							</div>
-							<div class="mdl-grid search">
-								<div class="mdl-cell mdl-cell--9-col mdl-cell--4-col-tablet"></div>
-								<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet">
-									<form method="GET" action="/search">
-										<div class="input-group carix">
-											<input type="text" class="form-control" placeholder="Search" name="key" width="75%">
-											<div class="input-group-btn">
-												<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-											</div>
-										</div>
-									</form>
-								</div>
-							</div>
+							</svg>
 						</div>
 					</div>
+				</div>
 			</header>
 			<main class="main_1200">
 				<div class="slider">
@@ -392,80 +387,80 @@
 				</div>
 			</footer>
 		</div>
-			<nav class="sidebar jsc-sidebar on" id="jsi-nav" data-sidebar-options="">
-				<ul class="sidebar-list">
-					<li class="dropdown"><a class="dropdown-toggle mdl-navigation__link" href="/">Home</a></li>
-					<?php $i = 0; ?>
-					@foreach($abouts as $about)
-					<li class="dropdown">
-						<a class="dropdown-toggle mdl-navigation__link" data-toggle="dropdown" href="#">{!! $about->category_name !!}<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-						@foreach($about->page->all() as $page)
-							<li><a href="/{{ $nav_temp[$i] }}/{{ $page->slug }}">{!! $page->title !!}</a></li>
+		<nav class="sidebar jsc-sidebar on" id="jsi-nav" data-sidebar-options="">
+			<ul class="sidebar-list">
+				<li class="dropdown"><a class="dropdown-toggle mdl-navigation__link" href="/">Home</a></li>
+				<?php $i = 0; ?>
+				@foreach($abouts as $about)
+				<li class="dropdown">
+					<a class="dropdown-toggle mdl-navigation__link" data-toggle="dropdown" href="#">{!! $about->category_name !!}<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+					@foreach($about->page->all() as $page)
+						<li><a href="/{{ $nav_temp[$i] }}/{{ $page->slug }}">{!! $page->title !!}</a></li>
+						@endforeach
+					</ul>
+				</li>
+				<?php $i++ ?>
+				@endforeach
+				@foreach($student_affairs as $sa)
+				<li class="dropdown">
+					<a class="dropdown-toggle mdl-navigation__link" data-toggle="dropdown" href="#">{!! $sa->category_name !!}<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						@foreach($sa->page->all() as $page)
+						<li>
+							<a href="/{{ $nav_temp[$i] }}/{{ $page->slug }}">{!! $page->title !!}</a></li>
 							@endforeach
-						</ul>
-					</li>
-					<?php $i++ ?>
-					@endforeach
-					@foreach($student_affairs as $sa)
-					<li class="dropdown">
-						<a class="dropdown-toggle mdl-navigation__link" data-toggle="dropdown" href="#">{!! $sa->category_name !!}<span class="caret"></span></a>
+						<li>
+							<a href="/{{ $nav_temp[$i] }}/prestasi">Prestasi</a></li>
+						<li>
+							<a href="/{{ $nav_temp[$i] }}/layanan">Layanan</a></li>
+					</ul>
+				</li>
+				<?php $i++ ?>
+				@endforeach
+				@foreach($human_resources as $hr)
+				<li class="dropdown">
+					<a class="dropdown-toggle mdl-navigation__link" data-toggle="dropdown" href="#">{!! $hr->category_name !!}<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						@foreach($hr->page->all() as $page)
+						<li><a href="/{{ $nav_temp[$i] }}/{{ $page->slug }}">{!! $page->title !!}</a></li>
+						@endforeach
+						<li><a href="/{{ $nav_temp[$i] }}/dosen">Dosen</a></li>
+					</ul>
+				</li>
+				<?php $i++ ?>
+				@endforeach
+				@foreach($curricula as $curriculum)
+				<li class="dropdown">
+					<a class="dropdown-toggle mdl-navigation__link" data-toggle="dropdown" href="#">{!! $curriculum->category_name !!}<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+					@foreach($curriculum->page->all() as $page)
+						<li>
+							<a href="/{{ $nav_temp[$i] }}/{{ $page->slug }}">{!! $page->title !!}</a>
+						</li>
+						@endforeach
+						<li>
+							<a href="/{{ $nav_temp[$i] }}/kurikulum">Kurikulum</a>
+						</li>
+					</ul>
+				</li>
+				<?php $i++ ?>
+				@endforeach
+				@foreach($facilities as $facility)
+				<li class="dropdown">
+					<a class="dropdown-toggle mdl-navigation__link" data-toggle="dropdown" href="#">{!! $facility->category_name !!}<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							@foreach($sa->page->all() as $page)
-							<li>
-								<a href="/{{ $nav_temp[$i] }}/{{ $page->slug }}">{!! $page->title !!}</a></li>
-								@endforeach
-							<li>
-								<a href="/{{ $nav_temp[$i] }}/prestasi">Prestasi</a></li>
-							<li>
-								<a href="/{{ $nav_temp[$i] }}/layanan">Layanan</a></li>
-						</ul>
-					</li>
-					<?php $i++ ?>
-					@endforeach
-					@foreach($human_resources as $hr)
-					<li class="dropdown">
-						<a class="dropdown-toggle mdl-navigation__link" data-toggle="dropdown" href="#">{!! $hr->category_name !!}<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							@foreach($hr->page->all() as $page)
-							<li><a href="/{{ $nav_temp[$i] }}/{{ $page->slug }}">{!! $page->title !!}</a></li>
-							@endforeach
-							<li><a href="/{{ $nav_temp[$i] }}/dosen">Dosen</a></li>
-						</ul>
-					</li>
-					<?php $i++ ?>
-					@endforeach
-					@foreach($curricula as $curriculum)
-					<li class="dropdown">
-						<a class="dropdown-toggle mdl-navigation__link" data-toggle="dropdown" href="#">{!! $curriculum->category_name !!}<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-						@foreach($curriculum->page->all() as $page)
+						@foreach($facility->page->all() as $page)
 							<li>
 								<a href="/{{ $nav_temp[$i] }}/{{ $page->slug }}">{!! $page->title !!}</a>
 							</li>
 							@endforeach
-							<li>
-								<a href="/{{ $nav_temp[$i] }}/kurikulum">Kurikulum</a>
-							</li>
 						</ul>
-					</li>
-					<?php $i++ ?>
-					@endforeach
-					@foreach($facilities as $facility)
-					<li class="dropdown">
-						<a class="dropdown-toggle mdl-navigation__link" data-toggle="dropdown" href="#">{!! $facility->category_name !!}<span class="caret"></span></a>
-							<ul class="dropdown-menu">
-							@foreach($facility->page->all() as $page)
-								<li>
-									<a href="/{{ $nav_temp[$i] }}/{{ $page->slug }}">{!! $page->title !!}</a>
-								</li>
-								@endforeach
-							</ul>
-					</li>
-					<?php $i++ ?>
-					@endforeach
-				</ul>
-			</nav>
+				</li>
+				<?php $i++ ?>
+				@endforeach
+			</ul>
+		</nav>
 	</body>
 	<script src="{{ asset('template') . '/js/responsive-slider.js' }}"></script>
 	<script src="{{ asset('template') . '/js/wow.min.js' }}"></script>
