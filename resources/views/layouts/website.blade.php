@@ -39,7 +39,7 @@
 						</div>
 						<div class="mdl-cell mdl-cell--7-col mdl-cell--2-col-tablet"></div>
 						<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet">
-							<div class="mdl-grid" style="padding-left: 120px;">
+							<div class="mdl-grid" style="margin-left: 41%;">
 								<ul class="nav nav-tabs" role="tablist">
 									<li>
 										<div class="btn-group download" style="margin-top: -40px">

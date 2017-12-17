@@ -39,7 +39,7 @@
 						</div>
 						<div class="mdl-cell mdl-cell--7-col mdl-cell--2-col-tablet"></div>
 						<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet">
-							<div class="mdl-grid" style="padding-left: 120px;">
+							<div class="mdl-grid" style="float: right;">
 								<ul class="nav nav-tabs" role="tablist">
 									<li>
 										<div class="btn-group download" style="margin-top: -40px">
@@ -138,7 +138,7 @@
 									</li>
 								</ul>
 							</div>
-							<div class="mdl-grid" style="padding-top: 20px;">
+							<!-- <div class="mdl-grid" style="margin-top: 20px;">
 								<form method="GET" action="/search" >
 									<div class="input-group carix">
 										<input type="text" class="form-control" placeholder="Search" name="key" id="searchbig">
@@ -147,11 +147,25 @@
 										</div>
 									</div>
 								</form>
-							</div>
+							</div> -->
 						</div>
 					</div>
-					<div class="mdl-grid" style="margin-top: -20px;">
-						<div class="mdl-cell mdl-cell--10-col mdl-cell--8-col-tablet">
+					<div class="mdl-grid">
+						<div class="mdl-cell mdl-cell--9-col mdl-cell--8-col-tablet"></div>
+						<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet" style="margin-top: -50px; margin-left: 0px;">
+							<form method="GET" action="/search" >
+								<div class="input-group carix">
+									<input type="text" class="form-control" placeholder="Search" name="key" id="searchbig">
+									<div class="input-group-btn">
+										<button class="btn btn-default" type="submit">
+											<i class="glyphicon glyphicon-search">
+											</i>
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet" style="margin-top: -5px">
 							<div class="mdl-grid" style="margin-left: -20px;">
 								<ul class="nav nav-tabs menubig">
 									<li><a href="/">Home</a></li>
