@@ -9,10 +9,12 @@
 
 @section('content')	
 	@foreach($news as $n)
-		<p style="font-size: 9pt; color: grey;">Published on <strong>{{ $n->published_date }}</strong> by <strong>{{ $n->user->fullname }}</strong></p>
-		{!! $n->body !!}
+		<div class="mdl-grid" style="margin-left: -15px;">
+			<p style="font-size: 9pt; color: grey; margin-top: -25px;">Published on <strong>{{ $n->published_date }}</strong> by <strong>{{ $n->user->fullname }}</strong></p>
+			{!! $n->body !!}
 
-		
+			
+		</div>
 		<div class="form-group">
 		Category &nbsp; : 
 		@foreach($n->category as $cat)
@@ -25,7 +27,6 @@
 		@endforeach
 		
 		</div>
-
  	
 	@endforeach
 @endsection

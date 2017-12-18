@@ -27,7 +27,7 @@
 	<body>
 		<div class="wrapper jsc-sidebar-content jsc-sidebar-pulled container">
 			<nav class="on">
-				<a href="#" class="link-menu jsc-sidebar-trigger"><i class="material-icons">menu</i></a>
+				<a href="#" class="link-menu jsc-sidebar-trigger"><i id="hamburger" class="material-icons">menu</i></a>
 			</nav>
 			<header class="headerbig">
 				<div class="container">
@@ -39,7 +39,7 @@
 						</div>
 						<div class="mdl-cell mdl-cell--7-col mdl-cell--2-col-tablet"></div>
 						<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet">
-							<div class="mdl-grid" style="margin-left: 41%;">
+							<div class="mdl-grid" style="float: right;">
 								<ul class="nav nav-tabs" role="tablist">
 									<li>
 										<div class="btn-group download" style="margin-top: -40px">
@@ -138,7 +138,7 @@
 									</li>
 								</ul>
 							</div>
-							<div class="mdl-grid" style="padding-top: 20px;">
+							<!-- <div class="mdl-grid" style="margin-top: 20px;">
 								<form method="GET" action="/search" >
 									<div class="input-group carix">
 										<input type="text" class="form-control" placeholder="Search" name="key" id="searchbig">
@@ -147,11 +147,25 @@
 										</div>
 									</div>
 								</form>
-							</div>
+							</div> -->
 						</div>
 					</div>
-					<div class="mdl-grid" style="margin-top: -20px;">
-						<div class="mdl-cell mdl-cell--10-col mdl-cell--8-col-tablet">
+					<div class="mdl-grid">
+						<div class="mdl-cell mdl-cell--9-col mdl-cell--8-col-tablet"></div>
+						<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet" style="margin-top: -50px; margin-left: 0px;">
+							<form method="GET" action="/search" >
+								<div class="input-group carix">
+									<input type="text" class="form-control" placeholder="Search" name="key" id="searchbig">
+									<div class="input-group-btn">
+										<button class="btn btn-default" type="submit">
+											<i class="glyphicon glyphicon-search">
+											</i>
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet" style="margin-top: -5px">
 							<div class="mdl-grid" style="margin-left: -20px;">
 								<ul class="nav nav-tabs menubig">
 									<li><a href="/">Home</a></li>
@@ -313,7 +327,7 @@
 							</div>
 							<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet"></div>
 							<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet" id="event2">
-							<h3>Event</h3>
+								<h3>Event</h3>
 								<svg class="linecontent" height="100" width="111%" text-allign=10px;>
 									<line x1="0" y1="0" x2="80%" y2="0" style="stroke:rgb(255,132,0);stroke-width:3" />
 								</svg>
@@ -359,6 +373,35 @@
 			</main>
 			<footer>
 				<div class="container">
+					<div class="mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet footerfix" id="eventfooter">
+						<h3>Event</h3>
+						<svg class="linecontent" height="100" width="111%" text-allign=10px;>
+							<line x1="0" y1="0" x2="80%" y2="0" style="stroke:rgb(255,132,0);stroke-width:3" />
+						</svg>
+						<svg class="linecontentlow" height="100" width="127%" text-allign=10px;>
+							<line x1="0" y1="0" x2="80%" y2="0" style="stroke:rgb(255,132,0);stroke-width:3" />
+						</svg>
+						<div class="card w-50">
+							<div class="card-block">
+							{{--  <hr>  --}}
+							<div>&nbsp;</div>
+							@foreach($events as $event)
+							{{--  <h5 class="card-title">2017</h5>  --}}
+							<div class="event-content">
+								<span class="badge">{{ $event->event_date }}</span>
+								<p class="card-text"><strong>{{ $event->event_title }}</strong> di {{ $event->event_location }}</p>
+								<a href="{{ '/event_ti/' . $event->event_slug }}" class="btn btn-primary">View</a>
+							</div>
+							<div>&nbsp;</div>
+							@endforeach
+							{{--  <h5 class="card-title">2017</h5>
+							<span class="badge">
+								<p class="card-text">Seminar International</p>
+									<a href="#" class="btn btn-primary">Join</a>  --}}
+							</span>
+							</div>
+						</div>
+					</div>
 					<div class="mdl-grid" style="margin: 0">
 						<div class="mdl-cell mdl-cell--12-col mdl-cell--3col-tablet">
 							<svg class="linecontentfooter" height="10" width="125%" text-allign=10px; style>

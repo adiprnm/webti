@@ -27,7 +27,7 @@
 	<body>
 		<div class="wrapper jsc-sidebar-content jsc-sidebar-pulled container">
 			<nav class="on">
-				<a href="#" class="link-menu jsc-sidebar-trigger"><i class="material-icons">menu</i></a>
+				<a href="#" class="link-menu jsc-sidebar-trigger"><i id="hamburger" class="material-icons">menu</i></a>
 			</nav>
 			<header class="headerbig">
 				<div class="container">
@@ -252,14 +252,13 @@
 										<line x1="0" y1="0" x2="80%" y2="0" style="stroke:rgb(255,132,0);stroke-width:3" />
 								</svg>
 							</div>
-							<div class="mdl-grid content-top">
+							<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone content-top">
 								@yield('content')
 							</div>
 							<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet">
 								@yield('pagination')
 							</div>
-						</div>
-						<div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--12-col-phone" >
+						</div><div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--12-col-phone" >
 							<div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-tablet activity">
 								<h3>Activity</h3>
 									<svg class="linecontent" height="100" width="111%" text-allign=10px;>
@@ -328,6 +327,35 @@
 			</main>
 			<footer>
 				<div class="container">
+					<div class="mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet footerfix" id="eventfooter">
+						<h3>Event</h3>
+						<svg class="linecontent" height="100" width="111%" text-allign=10px;>
+							<line x1="0" y1="0" x2="80%" y2="0" style="stroke:rgb(255,132,0);stroke-width:3" />
+						</svg>
+						<svg class="linecontentlow" height="100" width="127%" text-allign=10px;>
+							<line x1="0" y1="0" x2="80%" y2="0" style="stroke:rgb(255,132,0);stroke-width:3" />
+						</svg>
+						<div class="card w-50">
+							<div class="card-block">
+							{{--  <hr>  --}}
+							<div>&nbsp;</div>
+							@foreach($events as $event)
+							{{--  <h5 class="card-title">2017</h5>  --}}
+							<div class="event-content">
+								<span class="badge">{{ $event->event_date }}</span>
+								<p class="card-text"><strong>{{ $event->event_title }}</strong> di {{ $event->event_location }}</p>
+								<a href="{{ '/event_ti/' . $event->event_slug }}" class="btn btn-primary">View</a>
+							</div>
+							<div>&nbsp;</div>
+							@endforeach
+							{{--  <h5 class="card-title">2017</h5>
+							<span class="badge">
+								<p class="card-text">Seminar International</p>
+									<a href="#" class="btn btn-primary">Join</a>  --}}
+							</span>
+							</div>
+						</div>
+					</div>
 					<div class="mdl-grid" style="margin: 0">
 						<div class="mdl-cell mdl-cell--12-col mdl-cell--3col-tablet">
 							<svg class="linecontentfooter" height="10" width="125%" text-allign=10px; style>
